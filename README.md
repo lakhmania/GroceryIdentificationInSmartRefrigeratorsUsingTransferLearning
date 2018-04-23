@@ -1,4 +1,4 @@
-# GroceryIdentificationInSmartRefrigeratorsUsingTransferLearning 
+# Grocery Identification In Smart Refrigerators 
 
 ## Installation Instruction
 
@@ -123,3 +123,9 @@ python export_inference_graph.py --input_type image_tensor --pipeline_config_pat
 In the above command, output_directory is the name of the output folder where your frozen file would be created.
 
 Run **Object_detection.ipynb** jupyter notebook to test your model on your dataset by passing it test images
+
+# Contributors
+-  Apoorva Lakhmani [https://github.com/lakhmania/]
+-  Neha Lalwani [https://github.com/LalwaniN/]
+-  Nirali Merchant [https://github.com/nirali-merchant/]
+
