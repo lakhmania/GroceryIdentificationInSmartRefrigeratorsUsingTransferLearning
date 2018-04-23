@@ -1,6 +1,6 @@
-"# GroceryIdentificationInSmartRefrigeratorsUsingTransferLearning" 
+# GroceryIdentificationInSmartRefrigeratorsUsingTransferLearning 
 
-# Installation Instruction
+## Installation Instruction
 
 ## Tensorflow object detection API depends upon the following library:
 
