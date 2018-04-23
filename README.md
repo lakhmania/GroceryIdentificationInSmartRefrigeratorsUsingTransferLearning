@@ -5,14 +5,15 @@
 ## Tensorflow object detection API depends upon the following library:
 
 -  Protobuf 3.4.0
-Python
-Pillow 1.0
-lxml
-tf Slim (which is included in the "tensorflow/models/research/")
-Jupyter notebook
-Matplotlib
-Tensorflow
-Cython
+-  Python
+-  Pillow 1.0
+-  lxml
+-  tf Slim (which is included in the "tensorflow/models/research/")
+-  Jupyter notebook
+-  Matplotlib
+-  Tensorflow
+-  Cython
+
 First clone or download the github of tensorflow,
 
 git clone https://github.com/tensorflow/models.git
