@@ -16,15 +16,17 @@
 
 First clone or download the github of tensorflow,
 
-git clone https://github.com/tensorflow/models.git
+*git clone https://github.com/tensorflow/models.git*
 
 Next, run the command
 
-# For CPU
+```
+#### For CPU
 pip install tensorflow
-# For GPU
+#### For GPU
 pip install tensorflow-gpu
 
+```
 in your terminal window. If you have tensorflow already installed, upgrade it to the latest version. For upgarding tensorflow version, run the command
 
 pip install tensorflow --upgrade
