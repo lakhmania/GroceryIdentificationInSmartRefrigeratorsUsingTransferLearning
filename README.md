@@ -83,3 +83,43 @@ label_map_path: "/usr/home/username/data/label_map.pbtxt"
 ```
 Users should substitute the input_path and label_map_path arguments and insert the input configuration into the train_input_reader and eval_input_reader fields in the skeleton configuration.
 
+### Preparing Inputs TF Records
+Tensorflow Object Detection API reads data using the TFRecord file format.
+
+Images are labelled using lblImg [https://github.com/tzutalin/labelImg] which is in xml format. 
+XML files are then converted to csv format using xml_to_csv.py. This python file is present in the repository.
+
+To convert these into TFRecords, run the following commands:
+
+```
+python generate_tfrecord.py --csv_input=data/train_labels.csv --output_path=data/train.record
+
+python generate_tfrecord.py --csv_input=data/test_labels.csv --output_path=data/test.record
+
+```
+## Tensorflow model
+
+Model used for object detection is coco trained rfcn_resnet101_coco which can be downloaded from [https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md] with the configuration file rfcn_resnet101_coco.config from [https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs]
+
+Run the below command to start training your model
+```
+python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/rfcn_resnet101_coco.config
+
+```
+Navigate to models/object_detection, via terminal, and run the command:
+
+```
+tensorboard --logdir='training'
+
+```
+to start the TensorBoard. On Tensorboard you can monitor the graph for different loss functions and understand how model is trainig on your dataset.
+
+To see how the model is performing on your dataset, navigate to your TensorFlow object detection folder and copy the export_inference_graph.py file into the research folder and run the below command.
+
+```
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/ssd_mobilenet_v1_pets.config --trained_checkpoint_prefix training/model.ckpt-160 --output_directory groceryIdentfication
+
+```
+In the above command, output_directory is the name of the output folder where your frozen file would be created.
+
+Run **Object_detection.ipynb** jupyter notebook to test your model on your dataset by passing it test images
